@@ -1,69 +1,53 @@
-# gemini project
+# Gemini
+=========
 
-Automates the deployment of CoreOS on baremetal for Kubernetes clusters.
+-       Website: https://www.gemin.io
+-       Slack: `gemini-project.slack.com`
+-       Mailing list: [Google Groups](https://groups.google.com/group/geminio)
 
-Clone this repo:
-```
-# git clone https://github.com/danehans/gemini.git
-```
+Gemini is an open source cluster manager responsible for deploying, managing, and maintaining clustering systems.
 
-Clone the Kubernetes Contrib repo:
-```
-# git clone https://github.com/kubernetes/contrib.git
-```
+Gemini intends on supporting multiple clustering systems such as [Kubernetes](http://kubernetes.io/), [Apache Mesos](http://mesos.apache.org/), [Docker Swarm](https://www.docker.com/products/docker-swarm), and others. Currently, Gemini supports the following cluster formation:
 
-Update group_vars/all.yml and copy the contents to ~/contrib/ansible/group_vars/all.yml
+* **Cluster Type**: [Kubernetes](http://kubernetes.io/)
+* **Cluster OS**: [CoreOS](https://coreos.com/)
+* **Cluster Target**: BareMetal|[Vagrant](https://www.vagrantup.com/)
 
-Rename host_vars/gemini_master_example to host_vars/${GEMINI_MASTER_FQDN_OR_IP} then edit the file
-according to your deployment environment.
+Gemini includes abstractions for grouping clusters in loosely and tightly coupled formations, and provides mechanisms for clusters to communicate with each other in familiar ways.
 
-Replace gem-master-example in inventory/gemini-master with ${GEMINI_MASTER_FQDN_OR_IP}
+The key features of Gemini are:
 
-Run the pre-setup script to populate the gemini ansible roles. For example:
-```
-# pwd
-/root/gemini/ansible
+* **simple**: install, interfaces, operations, integration
+* **lean**: lightweight, accessible
+* **portable**: public, private, hybrid, multi-cloud
+* **extensible**: modular, pluggable, composable
 
-# ./pre-setup.sh 
-Cloning into '/root/gemini/ansible/roles/ansible-controller'...
-remote: Counting objects: 20, done.
-remote: Total 20 (delta 0), reused 0 (delta 0), pack-reused 20
-Unpacking objects: 100% (20/20), done.
-Cloning into '/root/gemini/ansible/roles/httpd'...
-remote: Counting objects: 128, done.
-remote: Total 128 (delta 0), reused 0 (delta 0), pack-reused 128
-Receiving objects: 100% (128/128), 19.27 KiB | 0 bytes/s, done.
-Resolving deltas: 100% (50/50), done.
-Cloning into '/root/gemini/ansible/roles/tftp'...
-remote: Counting objects: 172, done.
-remote: Total 172 (delta 0), reused 0 (delta 0), pack-reused 172
-Receiving objects: 100% (172/172), 23.85 KiB | 0 bytes/s, done.
-Resolving deltas: 100% (64/64), done.
-Cloning into '/root/gemini/ansible/roles/dnsmasq'...
-remote: Counting objects: 147, done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 147 (delta 0), reused 0 (delta 0), pack-reused 145
-Receiving objects: 100% (147/147), 18.42 KiB | 0 bytes/s, done.
-Resolving deltas: 100% (55/55), done.
-Cloning into '/root/gemini/ansible/roles/coreos-cloudinit'...
-remote: Counting objects: 32, done.
-remote: Total 32 (delta 0), reused 0 (delta 0), pack-reused 32
-Unpacking objects: 100% (32/32), done.
-total 28
-drwxr-xr-x. 7 root root 4096 Mar 26 06:21 .
-drwxr-xr-x. 7 root root 4096 Mar 26 06:20 ..
-drwxr-xr-x. 5 root root   74 Mar 26 06:21 ansible-controller
-drwxr-xr-x. 7 root root 4096 Mar 26 06:21 coreos-cloudinit
-drwxr-xr-x. 9 root root 4096 Mar 26 06:21 dnsmasq
-drwxr-xr-x. 9 root root 4096 Mar 26 06:21 httpd
--rw-r--r--. 1 root root  690 Mar 26 06:18 README.md
-drwxr-xr-x. 9 root root 4096 Mar 26 06:21 tftp
--> Your Gemini Ansible roles have been successfully created
-```
+Gemini builds upon best-of-breed open source technologies.
 
-Run the setup script to deploy the gemini-master node. For example:
-```
-# pwd
-/root/gemini/ansible
+<hr>
 
-# ./setup.sh 
+### Gemini can run anywhere!
+However, the initial release supports bare metal and vagrant deployments.  If you make it work on other infrastructure, please let us know and contribute instructions/code.
+
+### Gemini is NOT ready for Production!
+Gemini will not be ready to serve your production workloads until a 1.0 release (TBD).
+
+## Documentation
+
+All documentation is available on the [Gemini website](https://www.gemin.io).
+
+### Code of conduct
+
+Participation in the Gemini community is governed by the [Gemini Code of Conduct](code-of-conduct.md).
+
+### Want to do more than just 'discuss' Gemini?
+
+If you're interested in being a contributor and want to get involved in developing Gemini, start with the [Gemini Developer Guide](docs/dev/README.md) and also review the [contributor guidelines](CONTRIBUTING.md).
+
+### Support
+
+While there are many different channels that you can use to get ahold of us, you can help make sure that we are efficient in getting you the help that you need.
+
+If you need support, start with the [troubleshooting guide](docs/troubleshooting.md#getting-help) and work your way through the process that we've outlined.
+
+That said, if you have questions, reach out to us one way or another.  We don't bite!
