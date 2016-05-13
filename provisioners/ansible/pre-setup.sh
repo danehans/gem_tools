@@ -15,6 +15,7 @@ git clone -b pxe_coreos https://github.com/gemini-project/ansible-role-httpd.git
 git clone -b pxe_coreos https://github.com/gemini-project/ansible-role-tftp.git ${base_dir}/tftp
 git clone -b pxe_coreos https://github.com/gemini-project/ansible-dnsmasq.git ${base_dir}/dnsmasq
 git clone -b pxe_coreos https://github.com/gemini-project/ansible-coreos-cloudinit.git ${base_dir}/coreos-cloudinit
+git clone https://github.com/gemini-project/ansible-role-docker.git ${base_dir}/docker
 
 # Show the populated roles directory
 echo "-> These are your Ansible roles"

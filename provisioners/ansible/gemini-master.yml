@@ -9,9 +9,11 @@
     - tftp
     - httpd
     - coreos-cloudinit
+    - docker
   tags:
     - ansible-controller
     - dnsmasq
     - tftp
     - httpd
     - coreos-cloudinit
+    - docker

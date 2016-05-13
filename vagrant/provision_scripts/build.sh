@@ -2,10 +2,13 @@
 
 gem_ansible_dir=~/gemini-ansible/provisioners/ansible
 
-git clone https://github.com/gemini-project/gemini-ansible.git && cd $gem_ansible_dir 
+git clone https://github.com/gemini-project/gemini-ansible.git && cd $gem_ansible_dir
 
 #Sets the ssh user name
 sed -i "s/ansible_ssh_user: my_gemini_master_user/ansible_ssh_user: vagrant/" group_vars/all.yml
+
+#Sets docker user
+sed -i "s/docker_users: \[my_gemini_master_user\]/docker_users: \[vagrant\]/" group_vars/all.yml
 
 #removes the option router for the intnet, we only need one default gateway
 sed -i "s/dnsmasq_option_router: '10.10.10.1'/#dnsmasq_option_router: '10.10.10.1'/" group_vars/all.yml
