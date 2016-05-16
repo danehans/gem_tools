@@ -4,6 +4,9 @@
 # for password unless ansible_sudo_pass is set
 ansible_ssh_user: my_gemini_master_user
 
+# Account name to be used for interacting with docke
+docker_users: [my_gemini_master_user]
+
 # DNS Domain to use for PXE nodes
 dnsmasq_domain: 'example.com'
 
